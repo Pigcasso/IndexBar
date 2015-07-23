@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".IndexBarActivity">
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/previewText"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_preview"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <io.github.brightyoyo.IndexBar
+        android:id="@+id/index_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:alphabetPadding="5dp"
+        app:alphabetTextColor="@color/material_blue_grey_800"
+        app:alphabetTextSize="12sp"
+        app:indexBarColorNormal="@android:color/transparent"
+        app:indexBarColorPressed="#56000000"
+        app:indexBarRound="5dp"
+        app:indexBarSides="10dp"
+        app:withinIndexBar="false"/>
+
+</RelativeLayout>
