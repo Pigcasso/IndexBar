@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -24,15 +23,7 @@ import io.github.brightyoyo.utils.MetricsConverter;
  * 注册监听{@link IIndexBarFilter},来完成你需要的功能。
  *
  * @author bri (http://my.oschina.net/droideep)
- * @attr ref R.attr.indexBarColorNormal     :IndexBar没被点击时的背景色
- * @attr ref R.attr.indexBarColorPressed    :IndexBar被点击时的背景色
- * @attr ref R.attr.alphabetTextColor       :IndexBar上每个索引字符的颜色
- * @attr ref R.attr.alphabetTextSize        :IndexBar上每个索引字符的字符大小
- * @attr ref R.attr.alphabetPadding         :IndexBar上索引字符的间距
- * @attr ref R.attr.indexBarSides           :IndexBar与索引字符两侧的间距
- * @attr ref R.attr.indexBarRound           :IndexBar圆角的大小
- * @attr ref R.attr.withinIndexBar          :是否在IndexBar外也可以索引
- * @date 15-5-9.
+ * @since 15-5-9.
  */
 public class IndexBar extends View {
 
@@ -227,7 +218,6 @@ public class IndexBar extends View {
      * @param sideIndexY
      */
     private void filterListItem(float sideIndexY) {
-        int top = getTop();
         mCurrentSectionPosition = (int) (((sideIndexY) - mAlphabetPadding) /
                 ((getMeasuredHeight() - (2 * mAlphabetPadding)) / mSections.length));
         if (mCurrentSectionPosition >= 0 && mCurrentSectionPosition < mSections.length) {
@@ -484,7 +474,6 @@ public class IndexBar extends View {
 
     /**
      * Resets the paint to its default values and sets initial flags to it
-     * <p/>
      * Use this method before drawing the new element of the view
      */
     protected final void resetPaint() {
