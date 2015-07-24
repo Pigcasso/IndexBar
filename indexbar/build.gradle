@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = PROJ_VERSION                                                              // #CONFIG# // project version
+version = "1.0.0"                                                              // #CONFIG# // project version
 
 android {
     compileSdkVersion 22
@@ -31,10 +31,10 @@ dependencies {
 }
 
 
-def siteUrl = PROJ_WEBSITEURL                                                 // #CONFIG# // project homepage
-def gitUrl = PROJ_VCSURL                                                      // #CONFIG# // project git url
-def issueUrl = PROJ_ISSUETRACKERURL                                           // #CONFIG# // project issue url
-group = PROJ_GROUP                                                            // #CONFIG# // Maven Group ID for the artifact (pageckage name is ok)
+def siteUrl = 'https://github.com/brightyoyo/IndexBar'                    // #CONFIG# // project homepage
+def gitUrl = 'https://github.com/brightyoyo/IndexBar.git'                 // #CONFIG# // project git url
+def issueUrl = 'https://github.com/brightyoyo/IndexBar/issues'            // #CONFIG# // project issue url
+group = "io.github.brightyoyo"                                           // #CONFIG# // Maven Group ID for the artifact (pageckage name is ok)
 
 //generate javadoc and jar
 
@@ -44,7 +44,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name PROJ_DESCRIPTION
+                name 'Index bar in ListView'
                 // #CONFIG# // project title
                 url siteUrl
                 // Set your license
@@ -56,11 +56,11 @@ install {
                 }
                 developers {
                     developer {
-                        id DEVELOPER_ID
+                        id 'brightyoyo'
                         // #CONFIG# // your user id (you can write your nickname)
-                        name DEVELOPER_NAME
+                        name 'brightyoyo'
                         // #CONFIG# // your user name
-                        email DEVELOPER_EMAIL
+                        email 'brightzhu89@gmail.com'
                         // #CONFIG# // your email
                     }
                 }
@@ -104,9 +104,9 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = PROJ_ARTIFACTID
+        name = "indexbar"
         // #CONFIG# project name in jcenter
-        desc = PROJ_DESCRIPTION
+        desc = 'Index bar in ListView.'
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         issueTrackerUrl = issueUrl
