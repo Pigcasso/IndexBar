@@ -47,14 +47,4 @@ public final class MetricsConverter {
         return dp * scale;
     }
 
-    /**
-     * @param context
-     * @param px
-     * @return
-     */
-    public static float pxToDp(Context context, float px) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return px / scale;
-    }
-
 }
